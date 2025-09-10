@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/detail.css">
+  <link rel="stylesheet" href="css/rating.css">
 </head>
 
 <body>
@@ -34,6 +35,7 @@
           <li class="nav-item"><a class="nav-link" href="fav.html">收藏</a></li>
           <li class="nav-item"><a class="nav-link" href="subscribe.html">订阅</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">关于</a></li>
+          <!-- 用户登录状态将在这里动态添加 -->
         </ul>
       </div>
     </div>
@@ -58,9 +60,68 @@
         <div class="col-md-3 col-6"><i class="bi bi-clock fs-4 text-primary"></i>
           <div>开放</div><small id="spotTime">全天</small></div>
         <div class="col-md-3 col-6"><i class="bi bi-star fs-4 text-primary"></i>
-          <div>评分</div><small id="spotRate">4.8</small></div>
+          <div>评分</div><small id="spotRate">0.0</small></div>
         <div class="col-md-3 col-6"><i class="bi bi-telephone fs-4 text-primary"></i>
           <div>电话</div><small id="spotTel">0571-12345678</small></div>
+      </div>
+    </section>
+
+    <!-- 评分系统 -->
+    <section class="mb-5">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h4 class="mb-4"><i class="bi bi-graph-up"></i> 地标评分</h4>
+          
+          <!-- 评分统计 -->
+          <div class="row">
+            <div class="col-md-4 text-center mb-4">
+              <div class="display-4 text-primary" id="averageRating">0.0</div>
+              <div class="h6 text-muted mb-2">综合评分</div>
+              <div id="starDisplay" class="star-display mb-2">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+              </div>
+              <small class="text-muted" id="totalRatings">共 128 人评分</small>
+            </div>
+            
+            <div class="col-md-8">
+              <h6>评分分布</h6>
+              <div class="rating-bars" id="ratingBars">
+                <!-- 动态生成评分条 -->
+              </div>
+            </div>
+          </div>
+
+          <!-- 用户评分 -->
+          <div class="border-top pt-4 mt-4">
+            <h6 class="mb-3">为此地标评分</h6>
+            <div id="userRatingSection">
+              <p class="text-muted">请先 <a href="login.html">登录</a> 后再评分</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 评论区 -->
+    <section class="mb-5">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h4 class="mb-4"><i class="bi bi-chat-dots"></i> 用户评论</h4>
+          
+          <!-- 评论发表区 -->
+          <div id="commentSection">
+            <p class="text-muted">请先 <a href="login.html">登录</a> 后发表评论</p>
+          </div>
+
+          <!-- 评论列表 -->
+          <div id="commentsList" class="comments-list">
+            <!-- 动态生成评论 -->
+          </div>
+        </div>
       </div>
     </section>
 
@@ -77,5 +138,6 @@
   <script src="https://cdn.staticfile.net/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
   <script src="js/common.js"></script>
   <script src="js/detail.js"></script>
+  <script src="js/rating.js"></script>
 </body>
 </html>
