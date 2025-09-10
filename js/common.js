@@ -5,6 +5,7 @@
  *  3. 导航高亮
  *  4. 收藏/取消收藏
  *  5. 邮箱验证
+ *  6. 用户认证
  *************************************************/
 
 /* ---------- 1. 夜间模式 ---------- */
@@ -84,10 +85,80 @@ function validateEmail(str) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(str);
 }
 
+/* ---------- 6. 用户认证 ---------- */
+// 获取当前登录用户
+function getCurrentUser() {
+  const userData = localStorage.getItem('campus-user');
+  return userData ? JSON.parse(userData) : null;
+}
+
+// 检查是否已登录
+function isLoggedIn() {
+  return !!getCurrentUser();
+}
+
+// 登出
+function logout() {
+  localStorage.removeItem('campus-user');
+  localStorage.removeItem('rememberedEmail');
+  window.location.href = 'login.html';
+}
+
+// 更新导航栏用户状态
+function updateNavUserStatus() {
+  const user = getCurrentUser();
+  const navContainer = document.querySelector('.navbar-nav');
+  
+  if (!navContainer) return;
+  
+  // 移除现有的用户相关元素
+  const existingUserEl = navContainer.querySelector('.user-nav-item');
+  if (existingUserEl) {
+    existingUserEl.remove();
+  }
+  
+  if (user) {
+    // 已登录状态
+    const userHtml = `
+      <li class="nav-item dropdown user-nav-item">
+        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+          <img src="${user.avatar || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(user.firstName + ' ' + user.lastName) + '&background=random'}" 
+               alt="用户头像" class="rounded-circle me-1" width="24" height="24">
+          ${user.firstName}
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#" onclick="logout()">
+            <i class="bi bi-box-arrow-right"></i> 登出
+          </a></li>
+        </ul>
+      </li>
+    `;
+    navContainer.insertAdjacentHTML('beforeend', userHtml);
+  } else {
+    // 未登录状态
+    const loginHtml = `
+      <li class="nav-item user-nav-item">
+        <a class="nav-link" href="login.html">
+          <i class="bi bi-person-circle"></i> 登录
+        </a>
+      </li>
+    `;
+    navContainer.insertAdjacentHTML('beforeend', loginHtml);
+  }
+}
+
+// 页面加载时更新用户状态
+document.addEventListener('DOMContentLoaded', function() {
+  updateNavUserStatus();
+});
+
 /* 导出给别的页面用（ES6 模块化暂不需要，直接全局） */
 window.common = {
   getFav,
   isFav,
   toggleFav,
-  validateEmail
+  validateEmail,
+  getCurrentUser,
+  isLoggedIn,
+  logout
 };
