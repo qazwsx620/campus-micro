@@ -9,7 +9,7 @@ HTML5语义化 + CSS3(Grid/Flex) + JS(es6) + Canvas + Bootstrap5 + GitHub Pages
 ## 核心功能
 1. 首页轮播+Canvas地图点击跳转
 2. 地标列表实时搜索+高亮
-3. 详情页图片放大镜+收藏♥
+3. 详情页图片放大镜+收藏♥+打分+评论        
 4. 本地存储收藏夹+一键清空
 5. 夜间模式+三端响应式
 
@@ -24,6 +24,6 @@ https://qazwsx620.github.io/campus-micro/
 ## 提交记录
 - day1: 首页+Canvas+夜间按钮
 - day2: 列表+搜索
-- day3: 详情+收藏
+- day3: 详情+收藏+打分+评论   
 - day4: 收藏页+订阅+关于
 - day5: 响应式+部署+文档
