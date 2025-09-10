@@ -63,6 +63,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // 渲染评分分布条
         renderRatingBars(stats.distribution, stats.total);
+        
+        // 同步更新基本信息区域的评分显示
+        updateBasicInfo(stats.average, stats.total);
     }
 
     // 更新星级显示
@@ -113,6 +116,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         container.innerHTML = html;
+    }
+
+    // 把最新平均分/总评分数写到基本信息区
+    function updateBasicInfo(avg, total) {
+        // 基本信息区域
+        const spotRateElement = document.getElementById('spotRate');
+        if (spotRateElement) {
+            spotRateElement.textContent = avg.toFixed(1);
+        }
+        // 根据用户要求，不更新评分人数显示
     }
 
     // 渲染用户评分区
@@ -442,10 +455,11 @@ document.addEventListener('DOMContentLoaded', function() {
     /** 把最新平均分/总评分数写到基本信息区 */
     function updateBasicInfo(avg, total) {
     // 基本信息区域
-    document.getElementById('spotRate').textContent = avg.toFixed(1);
-    // 如果还想同步「共 xx 人评分」可再写一个小元素
-    const smallEl = document.querySelector('#spotRate').closest('div').querySelector('small');
-    if (smallEl && total > 0) smallEl.textContent = `${total} 人评`;
+    const spotRateElement = document.getElementById('spotRate');
+    if (spotRateElement) {
+        spotRateElement.textContent = avg.toFixed(1);
+    }
+    // 根据用户要求，不更新评分人数显示
     }
 
     // 初始化
