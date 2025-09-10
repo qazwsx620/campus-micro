@@ -1,0 +1,77 @@
+/* 登录注册页面样式 */
+.card {
+  border-radius: 1rem;
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.form-control:focus {
+  border-color: #165dff;
+  box-shadow: 0 0 0 0.2rem rgba(22, 93, 255, 0.25);
+}
+
+.btn-primary {
+  background-color: #165dff;
+  border-color: #165dff;
+  padding: 0.5rem 1rem;
+}
+
+.btn-primary:hover {
+  background-color: #0d4bbf;
+  border-color: #0d4bbf;
+}
+
+.input-group-text {
+  background-color: #f8f9fa;
+  border-right: 0;
+}
+
+.form-control {
+  border-left: 0;
+}
+
+.form-control:focus + .input-group-text {
+  border-color: #165dff;
+}
+
+/* 密码可见性切换按钮 */
+#togglePassword, #toggleConfirmPassword {
+  border-left: 0;
+}
+
+#togglePassword:hover, #toggleConfirmPassword:hover {
+  background-color: #e9ecef;
+}
+
+/* 响应式调整 */
+@media (max-width: 576px) {
+  .card-body {
+    padding: 1.5rem;
+  }
+}
+
+/* 夜间模式适配 */
+html.dark .card {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+html.dark .form-control {
+  background-color: #2d2d2d;
+  border-color: #444;
+  color: #e5e5e5;
+}
+
+html.dark .form-control:focus {
+  background-color: #2d2d2d;
+  border-color: #165dff;
+  color: #e5e5e5;
+}
+
+html.dark .input-group-text {
+  background-color: #2d2d2d;
+  border-color: #444;
+  color: #e5e5e5;
+}
