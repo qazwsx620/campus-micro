@@ -7,8 +7,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     const registerForm = document.getElementById('registerForm');
-    const firstNameInput = document.getElementById('firstName');
-    const lastNameInput = document.getElementById('lastName');
+    const fullNameInput = document.getElementById('fullName'); // 修改为正确的ID
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
     const confirmPasswordInput = document.getElementById('confirmPassword');
@@ -78,14 +77,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 表单验证
     function validateForm() {
-        const firstName = firstNameInput.value.trim();
-        const lastName = lastNameInput.value.trim();
+        const fullName = fullNameInput.value.trim(); // 修改为正确的变量
         const email = emailInput.value.trim();
         const password = passwordInput.value;
         const confirmPassword = confirmPasswordInput.value;
 
-        if (!firstName || !lastName || !email || !password || !confirmPassword) {
+        if (!fullName || !email || !password || !confirmPassword) { // 修改验证条件
             showError('请填写所有必填字段');
+            return false;
+        }
+
+        // 将全名分割为名和姓
+        const nameParts = fullName.split(' ');
+        if (nameParts.length < 1 || !nameParts[0]) {
+            showError('请输入有效的姓名');
             return false;
         }
 
@@ -119,12 +124,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // 创建新用户
-    function createUser(firstName, lastName, email, password) {
+    function createUser(fullName, email, password) { // 修改参数
         try {
             const users = JSON.parse(localStorage.getItem('campus-users') || '[]');
             
             // 生成用户ID
             const userId = Date.now().toString();
+            
+            // 将全名分割为名和姓
+            const nameParts = fullName.split(' ');
+            const firstName = nameParts[0];
+            const lastName = nameParts.slice(1).join(' ') || firstName;
             
             // 创建用户对象
             const newUser = {
@@ -156,12 +166,11 @@ document.addEventListener('DOMContentLoaded', function() {
         hideMessages();
 
         if (validateForm()) {
-            const firstName = firstNameInput.value.trim();
-            const lastName = lastNameInput.value.trim();
+            const fullName = fullNameInput.value.trim(); // 修改为正确的变量
             const email = emailInput.value.trim();
             const password = passwordInput.value;
             
-            const newUser = createUser(firstName, lastName, email, password);
+            const newUser = createUser(fullName, email, password); // 修改函数调用
             
             if (newUser) {
                 showSuccess('注册成功！正在跳转到登录页面...');
