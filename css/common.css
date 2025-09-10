@@ -4,6 +4,16 @@
   color: var(--primary-color) !important;
 }
 
+/* 登录后用户信息垂直居中对齐 */
+.navbar-nav .user-nav-item .nav-link {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav .user-nav-item .nav-link img {
+  margin-right: 0.5rem;
+}
+
 /* 统一卡片 */
 .card {
   border: none;
