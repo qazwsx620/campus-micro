@@ -1,0 +1,40 @@
+/* 导航栏高亮 */
+.navbar-nav .nav-link.active {
+  font-weight: 600;
+  color: var(--primary-color) !important;
+}
+
+/* 统一卡片 */
+.card {
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* 返回顶部按钮 */
+#backTop {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: none;
+  z-index: 1050;
+}
+
+/* 夜间按钮样式 */
+#nightBtn {
+  border-radius: 1rem;
+}
+
+/* 响应式三栏 → 两栏 → 一栏 */
+@media (max-width: 1200px) {
+  .col-lg-4 { width: 50%; }   /* 平板两栏 */
+}
+@media (max-width: 768px) {
+  .col-lg-4 { width: 100%; }  /* 手机一栏 */
+  #map { height: 250px; }     /* Canvas 缩小 */
+}

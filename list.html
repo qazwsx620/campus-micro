@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>校园地标 | 列表</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.staticfile.net/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.staticfile.net/bootstrap-icons/1.11.0/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/list.css">
+</head>
+
+<body>
+  <header class="bg-primary text-white py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1 class="h4 mb-0">校园地标</h1>
+      <button id="nightBtn" class="btn btn-outline-light btn-sm">
+        <i class="bi bi-moon-stars"></i> 夜间
+      </button>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>
+          <li class="nav-item"><a class="nav-link active" href="list.html">地标</a></li>
+          <li class="nav-item"><a class="nav-link" href="fav.html">收藏</a></li>
+          <li class="nav-item"><a class="nav-link" href="subscribe.html">订阅</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">关于</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-4">
+    <!-- 搜索栏 -->
+    <section class="mb-4">
+      <div class="row">
+        <div class="col-lg-6 col-md-8 col-12">
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-search"></i></span>
+            <input type="text" id="searchInput" class="form-control" placeholder="输入地标名称...">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 卡片网格 -->
+    <section id="cardGrid" class="row g-3">
+      <!-- JS 动态渲染 -->
+    </section>
+
+    <!-- 无结果提示 -->
+    <div id="noResult" class="alert alert-warning text-center d-none">暂无匹配地标</div>
+  </main>
+
+  <footer class="bg-light text-center py-3 mt-5">
+    <p class="mb-0 text-muted">&copy; 2025 校园微旅</p>
+  </footer>
+
+  <script src="https://cdn.staticfile.net/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/list.js"></script>
+</body>
+</html>

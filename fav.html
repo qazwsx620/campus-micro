@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>我的收藏 | 校园微旅</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.staticfile.net/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.staticfile.net/bootstrap-icons/1.11.0/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/common.css">
+</head>
+
+<body>
+  <header class="bg-primary text-white py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1 class="h4 mb-0">我的收藏</h1>
+      <button id="nightBtn" class="btn btn-outline-light btn-sm">
+        <i class="bi bi-moon-stars"></i> 夜间
+      </button>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>
+          <li class="nav-item"><a class="nav-link" href="list.html">地标</a></li>
+          <li class="nav-item"><a class="nav-link active" href="fav.html">收藏</a></li>
+          <li class="nav-item"><a class="nav-link" href="subscribe.html">订阅</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">关于</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2>共收藏 <span id="favCount">0</span> 处</h2>
+      <button id="clearBtn" class="btn btn-outline-danger btn-sm">
+        <i class="bi bi-trash"></i> 一键清空
+      </button>
+    </div>
+
+    <div id="favGrid" class="row g-3">
+      <!-- JS 动态渲染 -->
+    </div>
+
+    <div id="emptyTip" class="alert alert-info text-center d-none">
+      还没有收藏任何地标，去 <a href="list.html">地标列表</a> 看看吧！
+    </div>
+  </main>
+
+  <footer class="bg-light text-center py-3 mt-5">
+    <p class="mb-0 text-muted">&copy; 2025 校园微旅</p>
+  </footer>
+
+  <script src="https://cdn.staticfile.net/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/fav.js"></script>
+</body>
+</html>

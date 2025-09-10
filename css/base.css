@@ -1,0 +1,98 @@
+/* 统一变量 + 浏览器默认重置 */
+:root {
+  --primary-color: #165dff;
+  --secondary-color: #f2f3f5;
+  --text-color: #333;
+  --radius: 0.5rem;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  color: var(--text-color);
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+/* 夜间模式覆盖 */
+html.dark {
+  --text-color: #e5e5e5;
+  background-color: #121212;
+  color: var(--text-color);
+}
+
+html.dark body {
+  background-color: #121212;
+}
+
+/* 夜间模式下的头部和导航栏 */
+html.dark .bg-primary {
+  background-color: #0d3b8c !important;
+}
+
+html.dark .bg-light {
+  background-color: #1e1e1e !important;
+}
+
+html.dark .navbar-light .navbar-brand,
+html.dark .navbar-light .navbar-nav .nav-link {
+  color: #e5e5e5 !important;
+}
+
+html.dark .navbar-light .navbar-nav .nav-link:hover,
+html.dark .navbar-light .navbar-nav .nav-link:focus {
+  color: #165dff !important;
+}
+
+html.dark .text-muted {
+  color: #ffffff !important;
+}
+
+html.dark .card {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+/* 夜间模式下卡片内的文字颜色调整 */
+html.dark .card .card-title,
+html.dark .card .card-text {
+  color: #ffffff;
+}
+
+html.dark .card .card-text {
+  color: #e5e5e5;
+}
+
+html.dark .border {
+  border-color: #333 !important;
+}
+
+html.dark .btn-primary {
+  background-color: #0d3b8c;
+  border-color: #0d3b8c;
+}
+
+html.dark .btn-outline-light {
+  color: #ffffff;
+  border-color: #333;
+}
+
+html.dark .bg-light {
+  background-color: #1e1e1e !important;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>关于我们 | 校园微旅</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.staticfile.net/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.staticfile.net/bootstrap-icons/1.11.0/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/common.css">
+</head>
+
+<body>
+  <header class="bg-primary text-white py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1 class="h4 mb-0">关于我们</h1>
+      <button id="nightBtn" class="btn btn-outline-light btn-sm">
+        <i class="bi bi-moon-stars"></i> 夜间
+      </button>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>
+          <li class="nav-item"><a class="nav-link" href="list.html">地标</a></li>
+          <li class="nav-item"><a class="nav-link" href="fav.html">收藏</a></li>
+          <li class="nav-item"><a class="nav-link" href="subscribe.html">订阅</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">关于</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-5">
+    <!-- 项目介绍 -->
+    <section class="mb-5">
+      <h2>项目介绍</h2>
+      <p>「校园微旅」是面向新生、游客的可视化导览平台，涵盖 8 处地标、收藏、订阅、夜间模式等完整功能，采用 HTML5+CSS3+JS+Bootstrap5 全栈技术栈，已部署至 GitHub Pages。</p>
+    </section>
+
+    <!-- 时间线 -->
+    <section class="mb-5">
+      <h3>开发时间线</h3>
+      <ul class="timeline">
+        <li><strong>Day1</strong> 首页 + Canvas 平面图</li>
+        <li><strong>Day2</strong> 地标列表 + 搜索高亮</li>
+        <li><strong>Day3</strong> 详情页 + 收藏功能</li>
+        <li><strong>Day4</strong> 收藏夹 + 订阅 + 关于</li>
+        <li><strong>Day5</strong> 部署上线 + 文档录屏</li>
+      </ul>
+    </section>
+
+    <!-- 技术栈 -->
+    <section class="mb-5">
+      <h3>技术栈</h3>
+      <span class="badge bg-primary m-1">HTML5 语义化</span>
+      <span class="badge bg-primary m-1">CSS3 Flex/Grid</span>
+      <span class="badge bg-primary m-1">JavaScript ES6</span>
+      <span class="badge bg-primary m-1">Canvas 绘图</span>
+      <span class="badge bg-primary m-1">Bootstrap5</span>
+      <span class="badge bg-primary m-1">GitHub Pages</span>
+    </section>
+
+    <!-- 团队 -->
+    <section class="mb-5">
+      <h3>开发团队</h3>
+      <p>项目负责人：魏梦涵<br>指导教师：华鑫<br>仓库地址：<a href="https://github.com/qazwsx620/campus-micro" target="_blank">GitHub 开源链接</a></p>
+    </section>
+
+    <!-- 宣传视频 -->
+    <section>
+      <h3>宣传视频</h3>
+      <video controls class="w-100" poster="assets/images/scenery1.jpg">
+        <source src="assets/media/propaganda.mp4" type="video/mp4">
+        您的浏览器不支持视频播放。
+      </video>
+    </section>
+  </main>
+
+  <footer class="bg-light text-center py-3 mt-5">
+    <p class="mb-0 text-muted">&copy; 2025 校园微旅</p>
+  </footer>
+
+  <script src="https://cdn.staticfile.net/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script src="js/common.js"></script>
+</body>
+</html>

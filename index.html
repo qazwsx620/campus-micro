@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>校园微旅 | 首页</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap5 CDN -->
+  <link href="https://cdn.staticfile.net/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.staticfile.net/bootstrap-icons/1.11.0/font/bootstrap-icons.min.css">
+  <!-- 自定义样式 -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/common.css">
+</head>
+
+<body>
+  <!-- 头部 -->
+  <header class="bg-primary text-white py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1 class="h4 mb-0">校园微旅</h1>
+      <!-- 夜间模式按钮 -->
+      <button id="nightBtn" class="btn btn-outline-light btn-sm">
+        <i class="bi bi-moon-stars"></i> 夜间
+      </button>
+    </div>
+  </header>
+
+  <!-- 导航 -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">首页</a></li>
+          <li class="nav-item"><a class="nav-link" href="list.html">地标</a></li>
+          <li class="nav-item"><a class="nav-link" href="fav.html">收藏</a></li>
+          <li class="nav-item"><a class="nav-link" href="subscribe.html">订阅</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">关于</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 主体 -->
+  <main class="container my-4">
+    <!-- 轮播 -->
+    <section id="carousel" class="mb-5">
+      <div id="campusCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#campusCarousel" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#campusCarousel" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#campusCarousel" data-bs-slide-to="2"></button>
+          <button type="button" data-bs-target="#campusCarousel" data-bs-slide-to="3"></button>
+          <button type="button" data-bs-target="#campusCarousel" data-bs-slide-to="4"></button>
+          <button type="button" data-bs-target="#campusCarousel" data-bs-slide-to="5"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/images/scenery1.jpg" class="d-block w-100" alt="校园风光1">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/scenery2.jpg" class="d-block w-100" alt="校园风光2">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/scenery3.jpg" class="d-block w-100" alt="校园风光3">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/scenery4.jpg" class="d-block w-100" alt="校园风光4">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/scenery5.jpg" class="d-block w-100" alt="校园风光5">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/scenery6.jpg" class="d-block w-100" alt="校园风光6">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#campusCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#campusCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Canvas 地图 -->
+    <section class="mb-5">
+      <h2>校园平面图</h2>
+      <p class="text-muted">点击建筑可跳转详情</p>
+      <canvas id="map" width="800" height="450" class="border rounded w-100"></canvas>
+    </section>
+
+    <!-- 推荐卡片 -->
+    <section>
+      <h2>热门地标</h2>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="assets/images/gate.jpg" class="card-img-top" alt="校门">
+            <div class="card-body">
+              <h5 class="card-title">校门</h5>
+              <p class="card-text">学校正门，新生打卡第一站。</p>
+              <a href="detail.html?id=1" class="btn btn-primary btn-sm">去看看</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="assets/images/libraries.jpg" class="card-img-top" alt="图书馆">
+            <div class="card-body">
+              <h5 class="card-title">图书馆</h5>
+              <p class="card-text">藏书百万，自习圣地。</p>
+              <a href="detail.html?id=2" class="btn btn-primary btn-sm">去看看</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="assets/images/canteen.jpg" class="card-img-top" alt="食堂">
+            <div class="card-body">
+              <h5 class="card-title">食堂</h5>
+              <p class="card-text">网红菜品，性价比之王。</p>
+              <a href="detail.html?id=3" class="btn btn-primary btn-sm">去看看</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 底部 -->
+  <footer class="bg-light text-center py-3 mt-5">
+    <p class="mb-0 text-muted">&copy; 2025 校园微旅 · Made for NCHU WebFrontend</p>
+  </footer>
+
+  <!-- Bootstrap5 JS -->
+  <script src="https://cdn.staticfile.net/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <!-- 夜间模式 & 公共 -->
+  <script src="js/common.js"></script>
+  <!-- Canvas 地图 -->
+  <script src="js/canvas.js"></script>
+</body>
+</html>

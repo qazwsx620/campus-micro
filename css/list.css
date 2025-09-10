@@ -1,0 +1,30 @@
+/* 搜索栏圆角 */
+.input-group-text {
+  background: #fff;
+  border-right: 0;
+}
+#searchInput {
+  border-left: 0;
+}
+#searchInput:focus {
+  box-shadow: none;
+  border-color: #86b7fe;
+}
+
+/* 卡片小徽章 */
+.card-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+}
+
+/* 高亮关键词 */
+mark {
+  background: #ffe58f;
+  padding: 0 2px;
+}
