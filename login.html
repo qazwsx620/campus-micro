@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>登录 | 校园微旅</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.staticfile.net/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.staticfile.net/bootstrap-icons/1.11.0/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+  <header class="bg-primary text-white py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1 class="h4 mb-0">校园微旅 - 登录</h1>
+      <button id="nightBtn" class="btn btn-outline-light btn-sm">
+        <i class="bi bi-moon-stars"></i> 夜间
+      </button>
+    </div>
+  </header>
+
+  <main class="container my-5" style="max-width: 450px;">
+    <div class="card shadow">
+      <div class="card-body p-4">
+        <h2 class="text-center mb-4">欢迎回来</h2>
+        
+        <!-- 错误提示 -->
+        <div id="errorAlert" class="alert alert-danger d-none" role="alert">
+          <i class="bi bi-exclamation-triangle-fill"></i> <span id="errorMsg"></span>
+        </div>
+        
+        <!-- 成功提示 -->
+        <div id="successAlert" class="alert alert-success d-none" role="alert">
+          <i class="bi bi-check-circle-fill"></i> <span id="successMsg"></span>
+        </div>
+
+        <!-- 登录表单 -->
+        <form id="loginForm">
+          <div class="mb-3">
+            <label for="email" class="form-label">邮箱地址</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+              <input type="email" class="form-control" id="email" required placeholder="name@example.com">
+            </div>
+          </div>
+          
+          <div class="mb-3">
+            <label for="password" class="form-label">密码</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-lock"></i></span>
+              <input type="password" class="form-control" id="password" required placeholder="请输入密码">
+              <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                <i class="bi bi-eye"></i>
+              </button>
+            </div>
+          </div>
+          
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="rememberMe">
+            <label class="form-check-label" for="rememberMe">记住我</label>
+          </div>
+          
+          <button type="submit" class="btn btn-primary w-100 mb-3">
+            <i class="bi bi-box-arrow-in-right"></i> 登录
+          </button>
+        </form>
+
+        <div class="text-center">
+          <p class="mb-2">还没有账号？<a href="register.html" class="text-decoration-none">立即注册</a></p>
+          <p class="mb-0"><a href="index.html" class="text-decoration-none"><i class="bi bi-house"></i> 返回首页</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-light text-center py-3 mt-5">
+    <p class="mb-0 text-muted">&copy; 2025 校园微旅</p>
+  </footer>
+
+  <script src="https://cdn.staticfile.net/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
