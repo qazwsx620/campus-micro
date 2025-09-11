@@ -30,6 +30,12 @@ document.getElementById('spotTel').textContent = data.tel;
 
 // 收藏按钮
 const favBtn = document.getElementById('favBtn');
+
+// 检查用户是否已登录
+function checkLogin() {
+  return common.isLoggedIn();
+}
+
 function syncHeart() {
   const loved = common.isFav(id);
   favBtn.classList.toggle('loved', loved);
@@ -37,9 +43,18 @@ function syncHeart() {
     ? '<i class="bi bi-heart-fill"></i> 已收藏'
     : '<i class="bi bi-heart"></i> 收藏';
 }
+
 syncHeart();
 
 favBtn.onclick = () => {
+  // 检查用户是否已登录
+  if (!checkLogin()) {
+    // 用户未登录，跳转到登录页面
+    window.location.href = 'login.html';
+    return;
+  }
+  
+  // 用户已登录，执行收藏操作
   common.toggleFav(id);
   syncHeart();
 };
