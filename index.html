@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="css/common.css">
 </head>
 
-<body>
+<body class="with-fixed-header">
   <!-- 头部 -->
   <header class="bg-primary text-white py-3 fixed-top">
     <div class="container d-flex justify-content-between align-items-center">
@@ -26,7 +26,7 @@
   </header>
 
   <!-- 导航 -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top" style="margin-top: 56px;">
+  <nav id="mainNav" class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
     <div class="container">
       <a class="navbar-brand" href="index.html">Home</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -34,7 +34,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>
+          <li class="nav-item"><a class="nav-link active" href="index.html">首页</a></li>
           <li class="nav-item"><a class="nav-link" href="list.html">地标</a></li>
           <li class="nav-item"><a class="nav-link" href="fav.html">收藏</a></li>
           <li class="nav-item"><a class="nav-link" href="subscribe.html">订阅</a></li>
@@ -46,7 +46,7 @@
   </nav>
 
   <!-- 主体 -->
-  <main class="container my-4 with-fixed-header">
+  <main class="container my-4">
     <!-- 轮播 -->
     <section id="carousel" class="mb-5">
       <div id="campusCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -141,6 +141,10 @@
   <script src="https://cdn.staticfile.net/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
   <!-- 夜间模式 & 公共 -->
   <script src="js/common.js"></script>
+  <!-- 布局脚本 -->
+  <script src="js/layout.js"></script>
+  <!-- 调试布局 -->
+  <script src="js/debug-layout.js"></script>
   <!-- Canvas 地图 -->
   <script src="js/canvas.js"></script>
 </body>
