@@ -49,17 +49,34 @@
   #map { height: 250px; }     /* Canvas 缩小 */
 }
 
-/* 固定头部和导航栏 */
-header.fixed-top, 
-nav.fixed-top {
+/* 使用padding-top替代margin-top来为固定头部留出空间 */
+body.with-fixed-header {
+  padding-top: 120px; /* 为固定头部和导航栏留出空间 */
+}
+
+header.fixed-top {
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1031;
+}
+
+nav.fixed-top {
+  position: fixed;
+  top: 60px;
   left: 0;
   right: 0;
   z-index: 1030;
 }
 
-/* 主体内容需要添加上边距，避免被固定的头部和导航栏遮挡 */
-main.with-fixed-header {
-  margin-top: 120px;
+/* 响应式调整 */
+@media (max-width: 768px) {
+  body.with-fixed-header {
+    padding-top: 120px;
+  }
+  
+  nav.fixed-top {
+    top: 60px;
+  }
 }
