@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <header class="bg-primary text-white py-3">
+  <header class="bg-primary text-white py-3 fixed-top">
     <div class="container d-flex justify-content-between align-items-center">
       <h1 class="h4 mb-0" id="spotTitle">地标详情</h1>
       <button id="nightBtn" class="btn btn-outline-light btn-sm">
@@ -22,7 +22,7 @@
     </div>
   </header>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top" style="margin-top: 56px;">
     <div class="container">
       <a class="navbar-brand" href="index.html">Home</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -41,7 +41,7 @@
     </div>
   </nav>
 
-  <main class="container my-4">
+  <main class="container my-4 with-fixed-header">
     <!-- 大图 + 收藏 -->
     <section class="mb-4 position-relative">
       <img id="spotImg" src="" class="w-100 rounded" alt="地标大图">
@@ -126,7 +126,7 @@
     </section>
 
     <!-- 返回顶部 -->
-    <button id="backTop" class="btn btn-primary btn-sm d-none">
+    <button id="backTop" class="btn btn-primary btn-sm">
       <i class="bi bi-arrow-up"></i> 顶部
     </button>
   </main>
